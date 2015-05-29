@@ -121,6 +121,7 @@
 			buildPhases = (
 				A59E08771B184C940049B75A /* Sources */,
 				A59E08781B184C940049B75A /* Frameworks */,
+				A55A70261B184ECE00942956 /* Auto-update Build Number */,
 				A59E08791B184C940049B75A /* Resources */,
 			);
 			buildRules = (
@@ -206,6 +207,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A55A70261B184ECE00942956 /* Auto-update Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Auto-update Build Number";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A59E08771B184C940049B75A /* Sources */ = {
@@ -409,6 +427,7 @@
 				A59E089C1B184C940049B75A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A59E089D1B184C940049B75A /* Build configuration list for PBXNativeTarget "RatingsTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +436,7 @@
 				A59E089F1B184C940049B75A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
