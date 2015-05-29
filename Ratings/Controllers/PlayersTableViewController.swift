@@ -45,10 +45,37 @@ class PlayersTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("PlayerCell", forIndexPath: indexPath) as! UITableViewCell
 
         let player = players[indexPath.row] as Player
-        cell.textLabel?.text = player.name
-        cell.detailTextLabel?.text = player.game
+        
+        if let nameLabel = cell.viewWithTag(100) as? UILabel {
+            nameLabel.text = player.name
+        }
+        
+        if let gameLabel = cell.viewWithTag(101) as? UILabel {
+            gameLabel.text = player.game
+        }
+        
+        if let ratingImageView = cell.viewWithTag(102) as? UIImageView {
+            ratingImageView.image = self.imageForRating(player.rating)
+        }
         
         return cell
+    }
+    
+    func imageForRating(rating: Int) -> UIImage? {
+        switch rating {
+        case 1:
+            return UIImage(named: "Images/1StarSmall")
+        case 2:
+            return UIImage(named: "Images/2StarsSmall")
+        case 3:
+            return UIImage(named: "Images/3StarsSmall")
+        case 4:
+            return UIImage(named: "Images/4StarsSmall")
+        case 5:
+            return UIImage(named: "Images/5StarsSmall")
+        default:
+            return nil
+        }
     }
 
     /*
