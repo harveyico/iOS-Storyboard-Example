@@ -1,16 +1,25 @@
 //
-//  PlayersTableViewController.swift
+//  NewPlayerTableViewController.swift
 //  Ratings
 //
-//  Created by Harvey Ico on 5/29/15.
+//  Created by Harvey Ico on 6/1/15.
 //  Copyright (c) 2015 Kupal. All rights reserved.
 //
 
 import UIKit
 
-class PlayersTableViewController: UITableViewController {
+class NewPlayerTableViewController: UITableViewController {
     
-    var players: [Player] = playersData
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBAction func didPressCancelButton(segue:UIStoryboardSegue) {
+        
+    }
+    
+    @IBAction func didPressDoneButton(segue:UIStoryboardSegue) {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,45 +38,29 @@ class PlayersTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
+    /*
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1
+        return 0
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return players.count
+        return 0
     }
+    */
 
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PlayerCell", forIndexPath: indexPath) as! PlayerTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
 
-        let player = players[indexPath.row] as Player
-        cell.nameLabel.text = player.name
-        cell.gameLabel.text = player.game
-        cell.ratingImageView.image = self.imageForRating(player.rating)
-        
+        // Configure the cell...
+
         return cell
     }
-    
-    func imageForRating(rating: Int) -> UIImage? {
-        switch rating {
-        case 1:
-            return UIImage(named: "Images/1StarSmall")
-        case 2:
-            return UIImage(named: "Images/2StarsSmall")
-        case 3:
-            return UIImage(named: "Images/3StarsSmall")
-        case 4:
-            return UIImage(named: "Images/4StarsSmall")
-        case 5:
-            return UIImage(named: "Images/5StarsSmall")
-        default:
-            return nil
-        }
-    }
+    */
 
     /*
     // Override to support conditional editing of the table view.

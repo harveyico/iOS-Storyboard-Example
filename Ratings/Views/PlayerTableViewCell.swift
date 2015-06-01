@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlayerCellTableViewCell: UITableViewCell {
+class PlayerTableViewCell: UITableViewCell {
     @IBOutlet weak var gameLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ratingImageView: UIImageView!
