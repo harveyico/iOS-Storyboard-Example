@@ -117,7 +117,7 @@
                         <sections>
                             <tableViewSection headerTitle="Name" id="9c5-3f-WzK">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lVW-Yh-ONj">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="lVW-Yh-ONj">
                                         <rect key="frame" x="0.0" y="114" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lVW-Yh-ONj" id="nmv-dU-wQG">
@@ -125,7 +125,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" id="34E-uA-WPm">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                                    <rect key="frame" x="8" y="0.0" width="304" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -171,12 +171,12 @@
                     <navigationItem key="navigationItem" title="Add Player" id="yTA-Qc-XfY">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="hpM-Zr-smN">
                             <connections>
-                                <segue destination="r9c-m5-WUJ" kind="unwind" unwindAction="didPressCancelButton:" id="LVp-U3-xj5"/>
+                                <segue destination="r9c-m5-WUJ" kind="unwind" unwindAction="didPressCancelButton:" id="U0H-tm-nuz"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="3qm-Zf-S2m">
                             <connections>
-                                <segue destination="r9c-m5-WUJ" kind="unwind" unwindAction="didPressDoneButton:" id="XVc-f6-r9q"/>
+                                <segue destination="r9c-m5-WUJ" kind="unwind" identifier="SavePlayerDetail" unwindAction="didPressDoneButton:" id="4Cj-cn-qVI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -10,16 +10,10 @@ import UIKit
 
 class NewPlayerTableViewController: UITableViewController {
     
+    var player: Player!
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var nameLabel: UILabel!
-    
-    @IBAction func didPressCancelButton(segue:UIStoryboardSegue) {
-        
-    }
-    
-    @IBAction func didPressDoneButton(segue:UIStoryboardSegue) {
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +29,30 @@ class NewPlayerTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        println(indexPath.section)
+        
+        if indexPath.section == 0 {
+            nameTextField.becomeFirstResponder()
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SavePlayerDetail" {
+            player = Player(name: self.nameTextField.text, game: "Chess", rating: 1)
+        }
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        println("init NewPlayerTableViewController")
+        super.init(coder: aDecoder)
+    }
+    
+    deinit {
+        println("deinit NewPlayerTableViewController")
+    }
+    
     // MARK: - Table view data source
 
     /*

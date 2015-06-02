@@ -12,6 +12,20 @@ class PlayersTableViewController: UITableViewController {
     
     var players: [Player] = playersData
     
+    @IBAction func didPressCancelButton(segue:UIStoryboardSegue) {
+    }
+    
+    @IBAction func didPressDoneButton(segue:UIStoryboardSegue) {
+        if let newPlayerTableViewController = segue.sourceViewController as? NewPlayerTableViewController {
+            // Adds the New Player in collection
+            players.append(newPlayerTableViewController.player)
+            
+            //Update the tableView
+            let indexPath = NSIndexPath(forRow: players.count - 1, inSection: 0)
+            tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
