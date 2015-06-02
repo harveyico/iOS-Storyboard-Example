@@ -69,15 +69,15 @@ class PlayersTableViewController: UITableViewController {
     func imageForRating(rating: Int) -> UIImage? {
         switch rating {
         case 1:
-            return UIImage(named: "Images/1StarSmall")
+            return UIImage(named: "1StarSmall")
         case 2:
-            return UIImage(named: "Images/2StarsSmall")
+            return UIImage(named: "2StarsSmall")
         case 3:
-            return UIImage(named: "Images/3StarsSmall")
+            return UIImage(named: "3StarsSmall")
         case 4:
-            return UIImage(named: "Images/4StarsSmall")
+            return UIImage(named: "4StarsSmall")
         case 5:
-            return UIImage(named: "Images/5StarsSmall")
+            return UIImage(named: "5StarsSmall")
         default:
             return nil
         }

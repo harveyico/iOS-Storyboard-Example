@@ -45,8 +45,6 @@ class NewPlayerTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println(indexPath.section)
-        
         if indexPath.section == 0 {
             nameTextField.becomeFirstResponder()
         }
@@ -59,9 +57,6 @@ class NewPlayerTableViewController: UITableViewController {
         
         if segue.identifier == "PickGame" {
             if let gamePickerTableViewController = segue.destinationViewController as? GamePickerTableViewController {
-                println("****************************")
-                println(game)
-                println("****************************")
                 gamePickerTableViewController.selectedGame = game
             }
         }

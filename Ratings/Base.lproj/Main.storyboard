@@ -22,7 +22,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Gestures" image="Images/Gestures.png" id="UNV-Ax-XjJ"/>
+                    <tabBarItem key="tabBarItem" title="Gestures" image="Gestures.png" id="UNV-Ax-XjJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTY-KL-LAf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,7 +118,7 @@
                             <tableViewSection headerTitle="Name" id="9c5-3f-WzK">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="lVW-Yh-ONj">
-                                        <rect key="frame" x="0.0" y="114" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="50" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lVW-Yh-ONj" id="nmv-dU-wQG">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -138,7 +138,7 @@
                             <tableViewSection id="Zhr-pz-gqi">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="aKu-WV-mXJ" detailTextLabel="WK4-ze-APV" style="IBUITableViewCellStyleValue1" id="skt-DX-G3S">
-                                        <rect key="frame" x="0.0" y="178" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="114" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="skt-DX-G3S" id="ut0-iX-BAd">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -205,7 +205,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameCell" textLabel="k7c-aa-slw" style="IBUITableViewCellStyleDefault" id="xt9-8j-KsF">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xt9-8j-KsF" id="ayB-g3-NFH">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -240,7 +240,7 @@
         <scene sceneID="GrQ-Ll-kdK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="U5l-3q-BhO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Players" image="Images/Players.png" id="4DE-Gb-dsg"/>
+                    <tabBarItem key="tabBarItem" title="Players" image="Players.png" id="4DE-Gb-dsg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aGx-Ye-4oi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -275,8 +275,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Images/Gestures.png" width="16" height="16"/>
-        <image name="Images/Players.png" width="16" height="16"/>
+        <image name="Gestures.png" width="16" height="16"/>
+        <image name="Players.png" width="16" height="16"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
