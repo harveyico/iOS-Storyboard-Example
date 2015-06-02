@@ -1,36 +1,34 @@
 //
-//  NewPlayerTableViewController.swift
+//  GamePickerTableViewController.swift
 //  Ratings
 //
-//  Created by Harvey Ico on 6/1/15.
+//  Created by Harvey Ico on 6/2/15.
 //  Copyright (c) 2015 Kupal. All rights reserved.
 //
 
 import UIKit
 
-class NewPlayerTableViewController: UITableViewController {
+class GamePickerTableViewController: UITableViewController {
     
-    var player: Player!
-    var game:String = "Angry Birds"
-    
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var detailLabel: UILabel!
-    
-    @IBAction func selectedGame(segue: UIStoryboardSegue) {
-        if let gamePickerTableViewController = segue.sourceViewController as? GamePickerTableViewController,
-            selectedGame = gamePickerTableViewController.selectedGame {
-            
-            detailLabel.text = selectedGame
-            game = selectedGame
-        }
-    }
-    
+    var games: [String]!
+    var selectedGame: String? = nil
+    var selectedGameIndex: Int? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        detailLabel.text = game
+        games = [
+            "Angry Birds",
+            "Chess",
+            "Russian Roulette",
+            "Spin the Bottle",
+            "Texas Holdem Poker",
+            "Tic-Tac-Toe"
+        ]
+        
+        if let game = selectedGame {
+            selectedGameIndex = find(games, game)!
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -43,64 +41,65 @@ class NewPlayerTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println(indexPath.section)
-        
-        if indexPath.section == 0 {
-            nameTextField.becomeFirstResponder()
-        }
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "SavePlayerDetail" {
-            player = Player(name: self.nameTextField.text, game: game, rating: 1)
-        }
-        
-        if segue.identifier == "PickGame" {
-            if let gamePickerTableViewController = segue.destinationViewController as? GamePickerTableViewController {
-                println("****************************")
-                println(game)
-                println("****************************")
-                gamePickerTableViewController.selectedGame = game
-            }
-        }
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        println("init NewPlayerTableViewController")
-        super.init(coder: aDecoder)
-    }
-    
-    deinit {
-        println("deinit NewPlayerTableViewController")
-    }
-    
+
     // MARK: - Table view data source
 
-    /*
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return games.count
     }
-    */
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("GameCell", forIndexPath: indexPath) as! UITableViewCell
+        
+        cell.textLabel?.text = games[indexPath.row]
         // Configure the cell...
-
+        
+        if indexPath.row == selectedGameIndex {
+            cell.accessoryType = .Checkmark
+        } else {
+            cell.accessoryType = .None
+        }
+        
         return cell
     }
-    */
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        // Other row is selected need to deselect it
+        
+        if let index = selectedGameIndex {
+            let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0))
+            cell?.accessoryType = .None
+        }
+        
+        selectedGameIndex = indexPath.row
+        selectedGame = games[indexPath.row]
+        
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        cell?.accessoryType = .Checkmark
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SaveSelectedGame" {
+            if let cell = sender as? UITableViewCell {
+                let indexPath = tableView.indexPathForCell(cell)
+                selectedGameIndex = indexPath?.row
+                
+                if let index = selectedGameIndex {
+                    selectedGame = games[index]
+                }
+            }
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

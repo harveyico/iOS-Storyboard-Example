@@ -13,6 +13,7 @@
 		A5135AD21B185AC900D3588A /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5135AD11B185AC900D3588A /* SampleData.swift */; };
 		A5135AD41B1863B700D3588A /* Images in Resources */ = {isa = PBXBuildFile; fileRef = A5135AD31B1863B700D3588A /* Images */; };
 		A5135AD71B187CB500D3588A /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5135AD61B187CB500D3588A /* PlayerTableViewCell.swift */; };
+		A51D062E1B1D7E4600B37C72 /* GamePickerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D062D1B1D7E4600B37C72 /* GamePickerTableViewController.swift */; };
 		A59E08811B184C940049B75A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E08801B184C940049B75A /* AppDelegate.swift */; };
 		A59E08831B184C940049B75A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E08821B184C940049B75A /* ViewController.swift */; };
 		A59E08861B184C940049B75A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59E08841B184C940049B75A /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		A5135AD11B185AC900D3588A /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		A5135AD31B1863B700D3588A /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		A5135AD61B187CB500D3588A /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerTableViewCell.swift; path = Views/PlayerTableViewCell.swift; sourceTree = "<group>"; };
+		A51D062D1B1D7E4600B37C72 /* GamePickerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GamePickerTableViewController.swift; path = Controllers/GamePickerTableViewController.swift; sourceTree = "<group>"; };
 		A59E087B1B184C940049B75A /* Ratings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ratings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59E087F1B184C940049B75A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A59E08801B184C940049B75A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			children = (
 				A5135ACC1B18593300D3588A /* PlayersTableViewController.swift */,
 				A50C173B1B1C860500F4648D /* NewPlayerTableViewController.swift */,
+				A51D062D1B1D7E4600B37C72 /* GamePickerTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				A59E08831B184C940049B75A /* ViewController.swift in Sources */,
 				A5135AD71B187CB500D3588A /* PlayerTableViewCell.swift in Sources */,
 				A59E08811B184C940049B75A /* AppDelegate.swift in Sources */,
+				A51D062E1B1D7E4600B37C72 /* GamePickerTableViewController.swift in Sources */,
 				A5135AD21B185AC900D3588A /* SampleData.swift in Sources */,
 				A5135ACD1B18593300D3588A /* PlayersTableViewController.swift in Sources */,
 			);
